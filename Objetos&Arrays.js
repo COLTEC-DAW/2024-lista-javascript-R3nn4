@@ -55,19 +55,14 @@ function deepEquals(obj1, obj2){
     let props2 = Object.entries(obj2);
     let iguais = false;
 
-    if(props1.length != props2.length){
-        return iguais = false;
-    }
-    else{
-        for([key, value] of props1){
-            if(props1[key] != props2[key]){
-                return iguais = false;
-            }
-            else{
-                iguais = true;
-            }
+    for(const aux of Object.keys(props1)){
+        if(props1[aux] != props2[aux]){
+            return iguais = false;
         }
-
-        return iguais;
+        else{
+            iguais = true;
+        }
     }
+
+    return iguais;
 }
