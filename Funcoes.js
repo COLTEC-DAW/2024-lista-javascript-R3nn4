@@ -1,3 +1,4 @@
+//Mínimo e Máximo
 function min(a,b){
     if(a == b)
     {
@@ -32,6 +33,7 @@ function max(a,b){
     }
 }
 
+//Recursividade
 function mod2(number){
     let ehDivisivel = false;
 
@@ -58,6 +60,7 @@ function mod(num, mod){
     }
 }
 
+//Contando caracteres
 function countChars(frase, c){
     var i = 0;
     var conta = 0;
@@ -70,3 +73,19 @@ function countChars(frase, c){
 
     return conta;
 }
+
+var a = prompt("Insira um numero: ");
+var b = prompt("Insira outro numero: ");
+var valorMin = min(a,b);
+var valorMax = max(a,b);
+var Amod2 = mod2(a);
+var BmodA = mod(b,a);
+
+console.log(a + "\n" + b  + "\n" + valorMin + "/" + valorMax + "O primeiro numero eh divisivel por 2?: " + Amod2 + "\n" +
+"O segundo numero eh divisivel pelo primeiro?: "  + "\n");
+
+var string = prompt("Insira uma frase: ");
+var char = prompt("Insira um caractere presente nessa frase: ");
+
+var quantidade = countChars(string, char);
+console.log("\n Este caracter aparece " + quantidade + " vezes na sua frase!");

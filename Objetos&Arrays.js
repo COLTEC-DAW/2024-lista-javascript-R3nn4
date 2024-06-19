@@ -1,3 +1,4 @@
+//Trabalhando com intervalos
 function range(min,max,i){
 
     if(min >= max){
@@ -15,6 +16,7 @@ function range(min,max,i){
     }
 }
 
+//Revertendo um Array
 function reverseArray(array){
     let arrayReverso = new Array(array.length);
     let i = 0;
@@ -26,37 +28,46 @@ function reverseArray(array){
     return arrayReverso;
 }
 
+//Trabalhando com listas
 function toList(array){
     var list = {
-        value: 1,
-        rest: {
-          value: 2,
-          rest: {
-            value: 3,
-            rest: null
-          }
-        }
+        value: 0,
+        rest: null
     };
     let i = 0;
 
-    for(i = 0; i < 3; i++){
-        switch (i){
-            case 0:
-                list.value = array[i];
-                break;
-            
-            case 1:
-                list.rest.value = array[i];
-                break;
-            
-            case 2:
-                list.rest.rest.value = array[i];
-                break;
+    for(i = 0; i <= array.length; i++){
+        let aux = {
+            value: 0,
+            rest: null
         }
+
+        aux.value = array[i];
+        list.rest = aux;
     }
 
     return list;
 }
 
-function deepEquals(obj1,obj2){
+//DeepEquals
+function deepEquals(obj1, obj2){
+    let props1 = Object.entries(obj1);
+    let props2 = Object.entries(obj2);
+    let iguais = false;
+
+    if(props1.length != props2.length){
+        return iguais = false;
+    }
+    else{
+        for([key, value] of props1){
+            if(props1[key] != props2[key]){
+                return iguais = false;
+            }
+            else{
+                iguais = true;
+            }
+        }
+
+        return iguais;
+    }
 }
